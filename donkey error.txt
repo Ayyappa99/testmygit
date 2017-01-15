@@ -1,0 +1,29 @@
+The cat's done a whoopsie on the carpet
+
+Something went wrong...
+
+Techie Information:
+
+mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead.
+
+MySQL Error:
+
+Error 8192 on line 57 of /var/www/donkey.e1.niceondemand.com/messages_mass_hide.php
+
+Source code:
+
+                    $status = "already hidden, skipping.\r\n";
+                    break;
+                }
+                $date = mysql_escape_string(date('r'));
+                $query = <<<SQL
+UPDATE processes
+SET locked = DATE_ADD(now(), interval 5 minute)
+#0  FizzbackHandleError(8192, mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead., /var/www/donkey.e1.niceondemand.com/messages_mass_hide.php, 57, Array ([_GET] => Array ([s] => 34),[_POST] => Array ([hide] => 7876890
+),[_COOKIE] => Array ([f] => 1455062400,[t] => 1455148800,[soo] => desc,[c] => 0,[pt] => 0,[pti] => 0),[_FILES] => Array (),[_REQUEST] => Array ([s] => 34,[hide] => 7876890
+),[_SERVER] => Array ([HTTP_HOST] => donkey.e1.niceondemand.com,[HTTP_CONNECTION] => keep-alive,[CONTENT_LENGTH] => 18,[HTTP_CACHE_CONTROL] => max-age=0,[HTTP_ACCEPT] => text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8,[HTTP_ORIGIN] => http://donkey.e1.niceondemand.com,[HTTP_USER_AGENT] => Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36,[CONTENT_TYPE] => application/x-www-form-urlencoded,[HTTP_REFERER] => http://donkey.e1.niceondemand.com/messages_mass_hide.php?s=34,[HTTP_ACCEPT_ENCODING] => gzip,deflate,sdch,[HTTP_ACCEPT_LANGUAGE] => en-US,en;q=0.8,[HTTP_COOKIE] => f=1455062400; t=1455148800; soo=desc; c=0; pt=0; pti=0,[PATH] => /usr/local/bin:/usr/bin:/bin,[SERVER_SIGNATURE] => 
+Apache/2.2.22 (Debian) Server at donkey.e1.niceondemand.com Port 80
+
+,[SERVER_SOFTWARE] => Apache/2.2.22 (Debian),[SERVER_NAME] => donkey.e1.niceondemand.com,[SERVER_ADDR] => 10.103.120.252,[SERVER_PORT] => 80,[REMOTE_ADDR] => 10.103.120.9,[DOCUMENT_ROOT] => /var/www/donkey.e1.niceondemand.com,[SERVER_ADMIN] => webmaster@fizzback.com,[SCRIPT_FILENAME] => /var/www/donkey.e1.niceondemand.com/messages_mass_hide.php,[REMOTE_PORT] => 64502,[GATEWAY_INTERFACE] => CGI/1.1,[SERVER_PROTOCOL] => HTTP/1.1,[REQUEST_METHOD] => POST,[QUERY_STRING] => s=34,[REQUEST_URI] => /messages_mass_hide.php?s=34,[SCRIPT_NAME] => /messages_mass_hide.php,[PHP_SELF] => /messages_mass_hide.php,[REQUEST_TIME_FLOAT] => 1455106999.38,[REQUEST_TIME] => 1455106999),[server_address] => donkey.e1.niceondemand.com,[timestart] => 1455106999.3847,[exportdb] => Resource id #6,[query] => SELECT * FROM attributes WHERE process_id = '7876890' AND attribute_relation_id = 50,[result] => Resource id #15,[row] => ,[_p_list] => Array ([99] => AT&T Care,[91] => AT&T Retail,[105] => Bell BRS,[86] => Bell Care,[90] => Bell Retail,[104] => British Airways,[76] => BT Business,[13] => Butlins - Resorts,[102] => Capital One,[106] => Capital One Adhoc,[34] => Carphone Warehouse,[77] => Carphone Warehouse Direct Sales,[81] => Carphone Warehouse Europe,[107] => Go Compare,[97] => National Express,[82] => O2 Germany - Alice,[95] => O2 Germany - Retail & CS,[96] => O2 Germany - Social Media,[36] => Phones 4u Retail,[100] => Shell,[103] => Shell Malaysia,[101] => Sprint,[79] => Virgin Media),[_p] => 34,[config] => Array ([service_id] => 34,[service_name] => Carphone Warehouse,[dbhost] => phsdb.cpwretail.e1.niceondemand.com,[dbuser] => web,[dbpass] => efin-orel,[dbname] => phs_edb,[stateless] => N,[alerts] => N,[mancor] => N,[feeds] => feeds,[attributes] => 23110,23111,23120,23121,23122,23123,23130,23131,23132,23150,23160,23161,23162,23170,23200,[process_type_ids] => 2080,[hide] => ,[corrected] => ),[mapping] => Array (),[db] => Resource id #10,[dbname] => phs_edb,[umg_instances] => Array ([Legacy] => Array ([0] => umgdb.fizzback.net,[1] => web,[2] => hUMdfZ8j,[3] => umg),[Tesco] => Array ([0] => pete.fizzback.net,[1] => donkey,[2] => hUMdfZ8j,[3] => umg),[Tesco HR] => Array ([0] => umgdb.tescohr.gs2.fizzback.net,[1] => donkey,[2] => hUMdfZ8j,[3] => umg),[Conference] => Array ([0] => umgdb.conference.fizzback.net,[1] => donkey,[2] => hUMdfZ8j,[3] => umg),[AT&T Retail] => Array ([0] => umgdb.att.atl.fizzback.net,[1] => donkey,[2] => reio-dstr,[3] => umg),[AT&T Care] => Array ([0] => umgdb.attcare.atl.fizzback.net,[1] => donkey,[2] => i1GOaD6wCt,[3] => umg),[National Express] => Array ([0] => umgdb.natex.gs2.fizzback.net,[1] => donkey,[2] => hUMdfZ8j,[3] => umg),[CPW Europe] => Array ([0] => umgdb.cpweurope.fizzback.net,[1] => donkey,[2] => hUMdfZ8j,[3] => umg),[CPW Direct] => Array ([0] => phsdb.cpwdirect.e1.niceondemand.com,[1] => donkey,[2] => hUMdfZ8j,[3] => umg),[O2 UK] => Array ([0] => 192.168.98.170,[1] => donkey,[2] => hUMdfZ8j,[3] => umg),[O2 Germany] => Array ([0] => umgdb.o2de.gs2.fizzback.net,[1] => donkey,[2] => hUMdfZ8j,[3] => umg),[BT] => Array ([0] => db03.legacy.gs2.fizzback.net,[1] => dsaokpds,[2] => hUMdfZ8j,[3] => umg),[Capital One (legacy)] => Array ([0] => umgdb.capital1.gs2.fizzback.net,[1] => donkey,[2] => hUMdfZ8j,[3] => umg),[Capital One] => Array ([0] => umgdb.cap1.e1.niceondemand.com,[1] => donkey,[2] => f1zzb4ck,[3] => umg),[Virgin Media] => Array ([0] => umgdb.virginmedia.fizzback.net,[1] => donkey,[2] => dTsdkzlZ3mb5cOirL8Xq,[3] => umg)),[umg_name] => ,[umg_db] => ,[pagetitle] => ,[stopcache] => ___donotcache=kthnx-8192afa69a67da85dc278c4a0265eca7,[service] => Carphone Warehouse,[list] => 7876890
+,[process_ids] => Array ([0] => 7876890,[1] => ),[process_id] => 7876890,[errors] => ,[framework] => ))
+#1  mysql_escape_string(Wed, 10 Feb 2016 12:23:19 +0000) called at [/var/www/donkey.e1.niceondemand.com/messages_mass_hide.php:57]
